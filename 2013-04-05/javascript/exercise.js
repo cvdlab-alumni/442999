@@ -1,5 +1,4 @@
 
-
 // adapt pyplasm code to plasm.js code
 
 T = function (dims) {
@@ -51,10 +50,10 @@ VIEW = DRAW;
 //Scala
 depth =  0.3 //# pedata 
 raiser = 0.7 //# alzata
-step2D = MKPOL([[[0,0],[0,0.5+raiser],[depth,raiser],[depth,0.5+raiser]],
-    [[1,2,3,4]],None])
+step2D = SIMPLICIAL_COMPLEX([[[0,0],[0,0.5+raiser],[depth,raiser],[depth,0.5+raiser]],
+    [[1,2,3,4]]])
 step3D = MAP([S1,S3,S2])(PROD([step2D,Q(1)]))
-ramp = STRUCT(NN(6)([step3D,T([1,3])([depth,raiser])]))
+ramp = STRUCT(REPLICA(6)([step3D,T([1,3])([depth,raiser])]))
 VIEW(ramp)
 
 //TRE rampe
