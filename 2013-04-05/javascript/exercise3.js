@@ -1,5 +1,55 @@
+// adapt pyplasm code to plasm.js code
 
-###WEST SIDE
+T = function (dims) {
+  dims = dims.map(function (dim) {
+    return dim - 1;
+  });
+
+  return function (values) {
+    return function (object) {
+     return object.clone().translate(dims, values);
+    };
+  };
+};
+  
+R = function (dims) {
+  dims = dims.map(function (dim) {
+    return dim - 1;
+  });
+   
+  return function (angle) {
+    return function (object) {
+      return object.clone().rotate(dims, angle);
+    };
+  };
+};
+  
+S = function (dims) {
+  dims = dims.map(function (dim) {
+    return dim - 1;
+  });
+
+  return function (values) {
+    return function (object) {
+      return object.clone().scale(dims, values);
+    };
+  };
+};
+
+S3 = S2;
+S2 = S1;
+S1 = S0;
+
+GRID = SIMPLEX_GRID;
+
+NN = REPLICA;
+
+VIEW = DRAW;
+
+//
+
+
+//WEST SIDE
 part0w=GRID([[19.2],[0.5],[-13.2,4.4]])
 part2w=GRID([[2.5],[0.5],[-8.8,4.4]])
 part1w=GRID([[-4,15.2],[0.5],[-8.8,4.4]])
@@ -17,17 +67,17 @@ part12w=GRID([[-5.9,1],[0.5],[-4,0.4]])
 part13w=GRID([[-3,2.9],[0.5],[4.4]])
 
 part14w=GRID([[3],[0.5],[-4.1,0.3]])
-### 3 parti del balcone
+// 3 parti del balcone
 part15wb=GRID([[-19.2,1.8],[0.5],[-4.7,1.2]])
 part16wb=GRID([[-19.2,2],[0.5],[-4.4,0.4]])
 part17wb=GRID([[-21,0.2],[0.5],[-4.8,1.2]])
 
 westsulpiano=STRUCT([part0w,part1w,part2w,part3w,part4w,part5w,part6w,part7w,part8w,part9w,part10w,part11w,part12w,part13w,part14w,part15wb,part16wb,part17wb])
 west=westsulpiano
-###VIEW(west)
+//VIEW(west)
 
 
-###EST SIDE
+//EST SIDE
 part0e=GRID([[-2,9.9],[0.5],[-4.4,8.8]])
 part2e=GRID([[-2,9.9],[0.5],[-8.8,4.4]])
 
@@ -58,21 +108,21 @@ estsulpiano=STRUCT([part0e,part1e,part2e,part3e,part4e,part5e,part6e,part7e,part
 
 estRuotato=R([1,2])(PI)(estsulpiano)
 est=T([1,2])([21,12])(estRuotato)
-###VIEW(est)
+//VIEW(est)
 
 
-###SUD SIDE
-###ultimo piano
+//SUD SIDE
+//ultimo piano
 part0s=GRID([[11.3],[0.5],[-13.2,1.3]])
 part2s=GRID([[11.3],[0.5],[-16.4,1.6]])
 part1s=GRID([[0.2,-2,0.2,-8.4,0.5],[0.5],[-14.4,1.9]])
 
-###2piano
+//secondo piano
 
 part3s=GRID([[2.4,-8.5,0.5],[0.5],[-8.8,4.4]])
 part4s=GRID([[-2.4,8.5],[0.5],[-8.8,0.2,-3.5,0.6]])
 
-###1piano
+//primo piano
 
 part5s=GRID([[11.3],[0.5],[-8.3,0.5]])
 
@@ -83,7 +133,7 @@ part7s=GRID([[-10.9,0.5],[0.5],[-4.4,4.4]])
 
 part8s=GRID([[0.5,-1.8,8.9],[0.5],[-4.4,0.5]])
 
-part9s=T([3,2])([-4,-2])(GRID([[-0.4,1.8],[0.5],[-9.1,1.3]]))
+part9s=T([1,2])([-2,-4])(GRID([[-0.4,1.8],[0.5],[-9.1,1.3]]))
 
 
 
@@ -91,7 +141,7 @@ part14s=GRID([[0.5,-1.8,0.2],[0.5],[-4.8,1.1]])
 
 
 
-###piano terra
+//piano terra
 
 part10s=GRID([[0.5,-1.6,0.5,-8.5,0.5],[0.5],[4.4]])
 part12s=GRID([[-2.4,6.6],[0.5],[-4.2,0.2]])
@@ -104,10 +154,10 @@ sudsulpiano=STRUCT([part0s,part1s,part2s,part3s,part4s,part5s,part6s,part7s,part
 
 
 sud=T([1,2])([23,0])(R([1,2])(PI/2)(sudsulpiano))
-###VIEW(sud)
+//VIEW(sud)
 
 
-###NORD SIDE
+//NORD SIDE
 
 
 
@@ -120,11 +170,11 @@ part3n=GRID([[-10.5,0.5],[0.5],[-4.3,0.5,-4.3,0.5,-3.5,0.5,-3.5,0.5]])
 
 nordsulpiano=STRUCT([part0n,part2n,part3n])
 nord=(R([1,2])(PI/2)(nordsulpiano))
-###VIEW(nord)
+//VIEW(nord)
 
 
 
-###STRUTTURA
+//STRUTTURA
 
 
 structure=STRUCT([west,est,nord,sud])
