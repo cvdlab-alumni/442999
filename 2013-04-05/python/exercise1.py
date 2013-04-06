@@ -37,5 +37,7 @@ pillars3=COLOR(RED)(T(3)(13.2)(STRUCT([pill5,pill6,pill7])))
 
 //VIEW(pillars3)
 ###STRUCT dei pilastri di tutti e 4 i piani
-pillars=STRUCT([pillars1,pillars0,pillars3,pillars2])
+pillars=R([1,2])(PI)(STRUCT([pillars1,pillars0,pillars3,pillars2]))
+
 VIEW(pillars)
+

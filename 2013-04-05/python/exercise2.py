@@ -49,6 +49,9 @@ part7f2=GRID([[0.3],[-0.5,10.1],[0.1]])
 ###STRUCT del piano al piano terra e poi traslato dell'altezza del piano
 floor2basso=STRUCT([part0f2,part1f2,part3f2,part4f2,part5f2,part6f2,part7f2])
 floor2=T(3)(8.8)(floor2basso)
+from pyplasm import *
+GRID = COMP([INSR(PROD),AA(QUOTE)])
+
 ###VIEW(floor2)
 ###Griglia 3° piano divisa in parti
 part0f3=GRID([[-17.9,5],[-11.1,2],[0.1]])
@@ -74,8 +77,26 @@ floor4=T(3)(17.2)(floor4basso)
 ###VIEW(floor4)
 
 ###STRUCT dei 5 piani
-floors=STRUCT([floor0,floor1,floor2,floor3,floor4])
+floors=R([1,2])(PI)(STRUCT([floor0,floor1,floor2,floor3,floor4]))
 VIEW(floors)
 
-building=STRUCT([floors,pillars])
-VIEW(building)
+
+
+building1=S([1,2])([-1,-1])(T([1,2])([22,13])(STRUCT([floors,pillars])))
+VIEW(building1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

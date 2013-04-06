@@ -103,7 +103,7 @@ part11s=GRID([[-7,2.1],[0.5],[-2.4,1.2]])
 sudsulpiano=STRUCT([part0s,part1s,part2s,part3s,part4s,part5s,part6s,part7s,part8s,part9s,part10s,part11s,part12s,part14s,part15s])
 
 
-sud=(sudsulpiano)
+sud=T([1,2])([23,0])(R([1,2])(PI/2)(sudsulpiano))
 ###VIEW(sud)
 
 
@@ -127,11 +127,14 @@ nord=(R([1,2])(PI/2)(nordsulpiano))
 ###STRUTTURA
 
 
-structure=STRUCT([west,est,nord,T([1,2])([19,0])(R([1,2])(PI/2)(sud))])
-VIEW(obj)
+structure=STRUCT([west,est,nord,sud])
+VIEW(structure)
+
+building1=(T([1,2])([22,13])(STRUCT([floors,pillars])))
+VIEW(building1)
 
 
-building=STRUCT([floors,pillars,structure])
+building=STRUCT([building1,structure])
 VIEW(building)
 
 
