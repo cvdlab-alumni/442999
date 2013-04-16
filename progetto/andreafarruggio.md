@@ -33,8 +33,8 @@ TASK : IMAGE SEGMENTATION
 
 ###The input/output file
  - In input take a DICOM image (8-bit grayscale)
- - Apply RATS algortim, that is a regionalized Threshold for grayscaleimage 
- - In output threshold image that is a binary image 
+ - Apply RATS algortim, that is a regionalized Threshold for grayscale image 
+ - The output is a threshold image that is a binary image 
 
  ![Input_Output](https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/input_output.jpg)
 
