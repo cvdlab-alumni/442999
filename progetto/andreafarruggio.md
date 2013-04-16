@@ -25,17 +25,11 @@ SOLUTION:
 
  - RATS is a method to automatically compute a threshold without using the histogram of the image. 
  - It compute a weighted average of the image intensity, using the gradient of the image, as shown in the following equation:
-https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/sommatoria.jpg 
+![MediaPesata](https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/sommatoria.jpg )
 
----
-
-How the algorithm works
- - RATS is a method to automatically compute a threshold without using the histogram of the image. 
- - It compute a weighted average of the image intensity, using the gradient of the image, as shown in the following equation:
- 
 
 
 - - -
 -The input/output file
 
-https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/input_output.jpg
+![Input_Output](https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/input_output.jpg)
