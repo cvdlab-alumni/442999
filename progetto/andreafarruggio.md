@@ -20,6 +20,8 @@ SOLUTION:
 -------------------------------------
 
 How the algorithm works
- - RATS is a method to automatically compute a threshold without using the histogram of the image. It compute a weighted average of the image intensity, using the gradient of the image, as shown in the following equation:
+ - RATS is a method to automatically compute a threshold without using the histogram of the image. 
+ - It compute a weighted average of the image intensity, using the gradient of the image, as shown in the following equation:
+ 
 
 
