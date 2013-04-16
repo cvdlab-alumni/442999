@@ -1,4 +1,4 @@
-###WEBDICOM
+##WEBDICOM
 
 Andrea Farruggio
 
@@ -6,22 +6,22 @@ TASK : IMAGE SEGMENTATION
 
 - - -
 
-PROBLEM LIST:
+###PROBLEM LIST:
 
 - The Threshold algortim for image segmentation
 - Analysis of an implementation of image segmentation in ImageJ
 
 - - -
 
-SOLUTION:
+###SOLUTION:
 
 - The plugin find in ImageJ for image segmntation is RATS :
-- module RATS(Robust Automatic Threshold Selection)
+ - module RATS(Robust Automatic Threshold Selection)
 - Try to integrete the algoritm in java or in a applet
 
 - - -
 
-##How the algorithm works
+###How the algorithm works
 
  - RATS is a method to automatically compute a threshold without using the histogram of the image. 
  - It compute a weighted average of the image intensity, using the gradient of the image, as shown in the following equation:
@@ -31,7 +31,7 @@ SOLUTION:
 
 - - -
 
-##The input/output file
+###The input/output file
  - In input take a DICOM image (8-bit grayscale)
  - Apply RATS algortim, that is a regionalized Threshold for grayscaleimage 
  - In output threshold image that is a binary image 
