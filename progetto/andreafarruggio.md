@@ -21,15 +21,21 @@ SOLUTION:
 
 - - -
 
--How the algorithm works
+##How the algorithm works
 
  - RATS is a method to automatically compute a threshold without using the histogram of the image. 
  - It compute a weighted average of the image intensity, using the gradient of the image, as shown in the following equation:
-![MediaPesata](https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/sommatoria.jpg )
+ ![MediaPesata](https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/sommatoria.jpg )
 
 
 
 - - -
--The input/output file
 
-![Input_Output](https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/input_output.jpg)
+##The input/output file
+ - In input take a DICOM image (8-bit grayscale)
+ - Apply RATS algortim, that is a regionalized Threshold for grayscaleimage 
+ - In output threshold image that is a binary image 
+
+ ![Input_Output](https://github.com/cvdlab-cg/442999/edit/master/progetto/immagini/input_output.jpg)
+
+ - - -
