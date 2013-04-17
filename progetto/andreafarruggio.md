@@ -25,7 +25,7 @@ TASK : IMAGE SEGMENTATION
 
  - RATS is a method to automatically compute a threshold without using the histogram of the image. 
  - It compute a weighted average of the image intensity, using the gradient of the image, as shown in the following equation:
- - [sommatoria](https://raw.github.com/cvdlab-cg/442999/master/progetto/immagini/sommatoria.jpg )
+ - ![sommatoria](https://raw.github.com/cvdlab-cg/442999/master/progetto/immagini/sommatoria.jpg )
 
 
 
