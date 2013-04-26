@@ -78,7 +78,9 @@ It compute a weighted average of the image intensity, using the gradient of the 
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/enhance_more.png)
  
  
- - Find_Edge![image](http://)
+ - Find_Edge
+  
+ ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/Find_Edges_PIL.png)
 
 
 ## SCIKIT-Image (image processing in python)
