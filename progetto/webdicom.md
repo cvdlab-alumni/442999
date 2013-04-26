@@ -10,9 +10,9 @@
 
  
 
-- ###JAVA
-- ###PYTHON
-- ###JAVASCRIPT
+- JAVA
+- PYTHON
+- JAVASCRIPT
 
 ---
 
@@ -53,10 +53,12 @@ It compute a weighted average of the image intensity, using the gradient of the 
  
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/Cartilagini.png)
 
+---
+
   - ##### **Posterize**
   
    ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/posterize_PIL.png)
-   
+ --- 
    
   - ##### **Solarize**
   
@@ -67,35 +69,53 @@ It compute a weighted average of the image intensity, using the gradient of the 
  - ##### **Emboss** 
  
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/Emboss_PIL.png)
+ ---
  
- - #### **Edge_Enhance**
+ - #####**Edge_Enhance**
  
   ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/edge_enhance_PIL.png)
+ --- 
   
-  
- - #### **Edge_Enhance_More** 
+ - **Edge_Enhance_More** 
  
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/enhance_more.png)
+ ---
  
+ - ***Find_Edge*** 
  
- - #### **Find_Edge**
-  
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/Find_Edges_PIL.png)
 
 
 ## SCIKIT-Image (image processing in python)
 
-- Canny Edge Detection
-- Find the intersection of two segmentations
-- Local Otsu Threshold
-- Thresholding
-- Adaptive Thresholding
-- Watershed segmentation
+- **Canny Edge Detection**
 
+![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/scimage/canny_edge_detection.png)
+
+---
+
+- **Local Otsu Threshold vs Global Otsu Threshold**
+
+
+![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/scimage/thresholding_localvsotsu.png)
+
+---
+- **Global Thresholding vs Adaptative Threshold**
+
+
+![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/scimage/GlobalvsAdaptativeThresholding.png)
+
+---
+- **Sobel +Watershed segmentation vs Colored Slic** 
+
+
+![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/scimage/soble_watershed_slic.png)
 
 ---
 
 ## SimpleITK
+
+
 
 
 
