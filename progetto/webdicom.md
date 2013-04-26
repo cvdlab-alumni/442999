@@ -58,20 +58,21 @@ It compute a weighted average of the image intensity, using the gradient of the 
   - ##### **Posterize**
   
    ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/posterize_PIL.png)
- --- 
+--- 
    
   - ##### **Solarize**
   
   ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/solarize_PIL.png)  
+---
 
-- ####The ImageFilter Module
+####The ImageFilter Module
 - 
  - ##### **Emboss** 
  
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/Emboss_PIL.png)
  ---
  
- - #####**Edge_Enhance**
+ - **Edge_Enhance**
  
   ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/edge_enhance_PIL.png)
  --- 
@@ -79,12 +80,13 @@ It compute a weighted average of the image intensity, using the gradient of the 
  - **Edge_Enhance_More** 
  
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/enhance_more.png)
- ---
+---
  
- - ***Find_Edge*** 
+ - **Find_Edge** 
  
  ![image](https://raw.github.com/cvdlab-cg/442999/master/progetto/PIL/Find_Edges_PIL.png)
 
+---
 
 ## SCIKIT-Image (image processing in python)
 
