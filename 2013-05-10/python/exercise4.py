@@ -99,7 +99,7 @@ points5=[[3.5,1.2],[3.5,1.2],[3.5,1.2],[1,1],[0.1,1.4],[0,2.3],[0,2.7],[0.3,3.6]
 funcia=STRUCT([SPLINE(CUBICUBSPLINE(domain1))(points5)])
 
 
-mock_up=(STRUCT([R([2,3])(PI/2)(latosx),T([1])([19])(R([1,2])(PI/2)(R([2,3])(PI/2)(dietro))),T([3])(5.6)(alto),T([2])([7.4])(R([2,3])(PI/2)(latosx)),T([1])([12])(R([1,2])(PI/2)(R([2,3])(PI/2)(davanti))),T([1])([8])(R([1,2])(PI/2)(R([2,3])(PI/2)(funcia)))]))
+mock_up=(STRUCT([R([2,3])(PI/2)(latosx),T([1])([19])(R([1,2])(PI/2)(R([2,3])(PI/2)(dietro))),T([3])(3)(alto),T([2])([7.4])(R([2,3])(PI/2)(latosx)),T([1])([12])(R([1,2])(PI/2)(R([2,3])(PI/2)(davanti))),T([1])([8])(R([1,2])(PI/2)(R([2,3])(PI/2)(funcia)))]))
 
 mock_up1=(STRUCT([S([1,2,3])([3,3,3])(mock_up)]))
 #VIEW(mock_up1)
