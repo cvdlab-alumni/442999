@@ -99,7 +99,7 @@ points5=[[3.5,1.2],[3.5,1.2],[3.5,1.2],[1,1],[0.1,1.4],[0,2.3],[0,2.7],[0.3,3.6]
 funcia=STRUCT([SPLINE(CUBICUBSPLINE(domain1))(points5)])
 
 
-mock_up=(STRUCT([R([2,3])(PI/2)(latosx),T([1])([19])(R([1,2])(PI/2)(R([2,3])(PI/2)(dietro))),T([3])(3)(alto),T([2])([7.4])(R([2,3])(PI/2)(latosx)),T([1])([12])(R([1,2])(PI/2)(R([2,3])(PI/2)(davanti))),T([1])([8])(R([1,2])(PI/2)(R([2,3])(PI/2)(funcia)))]))
+mock_up=(STRUCT([R([2,3])(PI/2)(latosx),T([1])([19])(R([1,2])(PI/2)(R([2,3])(PI/2)(dietro))),T([3])(5.6)(alto),T([2])([7.4])(R([2,3])(PI/2)(latosx)),T([1])([12])(R([1,2])(PI/2)(R([2,3])(PI/2)(davanti))),T([1])([8])(R([1,2])(PI/2)(R([2,3])(PI/2)(funcia)))]))
 
 mock_up1=(STRUCT([S([1,2,3])([3,3,3])(mock_up)]))
 #VIEW(mock_up1)
@@ -169,10 +169,28 @@ st=COLOR(GRAY)(STRUCT([st_1,st_2,st_3]))
 #VIEW(st)
 
 
-sterzo2=(STRUCT([T([3])(1)(sterzo),st]))
-#VIEW(sterzo2)
+sterzo2=(STRUCT([T([3])(1)(sterzo),(st)]))
+VIEW(sterzo2)
 
-mock_up3=STRUCT([mock_up2,T([1,2,3])([16,10.2,6])(R([1,3])(-PI/4)(sterzo2))])
+circle=CIRCLE(0.4)([8,8])
+#VIEW(circle)
+circle3d=(OFFSET([0.01,0.02,0.01])(circle))
+
+circle1=R([1,2])((0.03*PI))((COLOR(GREEN)(T([1,2,3])([0,1,0.6])(R([2,3])(PI/4)(CIRCLE(0.1)([20,20]))))))
+circle2=R([1,2])((0.03*PI))((COLOR(GREEN)(T([1,2,3])([0,1.5,0.8])(R([2,3])(PI/4)(CIRCLE(0.15)([20,20]))))))
+circle3=R([1,2])(PI/2)(circle2)
+circle4=R([1,2])(PI/2)(circle1)
+circle5=R([1,2])(-PI/2)(circle2)
+circle6=R([1,2])(-PI/2)(circle1)
+
+
+
+
+sterzo4=(STRUCT([circle3d,sterzo2,circle1,circle2,circle3,circle4,circle5,circle6]))
+VIEW(sterzo4)
+
+
+mock_up3=STRUCT([mock_up2,T([1,2,3])([16,10.2,6])(R([1,3])(-PI/4)(sterzo4))])
 VIEW(mock_up3)
 
 

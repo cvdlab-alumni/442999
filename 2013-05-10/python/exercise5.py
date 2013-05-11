@@ -99,7 +99,7 @@ points5=[[3.5,1.2],[3.5,1.2],[3.5,1.2],[1,1],[0.1,1.4],[0,2.3],[0,2.7],[0.3,3.6]
 funcia=STRUCT([SPLINE(CUBICUBSPLINE(domain1))(points5)])
 
 
-mock_up=(STRUCT([R([2,3])(PI/2)(latosx),T([1])([19])(R([1,2])(PI/2)(R([2,3])(PI/2)(dietro))),T([3])(5.6)(alto),T([2])([7.4])(R([2,3])(PI/2)(latosx)),T([1])([12])(R([1,2])(PI/2)(R([2,3])(PI/2)(davanti))),T([1])([8])(R([1,2])(PI/2)(R([2,3])(PI/2)(funcia)))]))
+mock_up=(STRUCT([R([2,3])(PI/2)(latosx),T([1])([19])(R([1,2])(PI/2)(R([2,3])(PI/2)(dietro))),T([3])(3)(alto),T([2])([7.4])(R([2,3])(PI/2)(latosx)),T([1])([12])(R([1,2])(PI/2)(R([2,3])(PI/2)(davanti))),T([1])([8])(R([1,2])(PI/2)(R([2,3])(PI/2)(funcia)))]))
 
 mock_up1=(STRUCT([S([1,2,3])([3,3,3])(mock_up)]))
 #VIEW(mock_up1)
@@ -154,6 +154,7 @@ mock_up2=(STRUCT([mock_up1,T([1,3])([8,3])(wheels),T([1,3])([29.5,3])(wheels),T(
 
 
 
+
 sterzo=COLOR(BROWN)((TORUS([2.5,2])([30,20])))
 sterzo1=STRUCT([sterzo])
 #VIEW(sterzo1)
@@ -169,10 +170,28 @@ st=COLOR(GRAY)(STRUCT([st_1,st_2,st_3]))
 #VIEW(st)
 
 
-sterzo2=(STRUCT([T([3])(1)(sterzo),st]))
+sterzo2=(STRUCT([T([3])(1)(sterzo),(st)]))
 #VIEW(sterzo2)
 
-mock_up3=STRUCT([mock_up2,T([1,2,3])([16,10.2,6])(R([1,3])(-PI/4)(sterzo2))])
+circle=CIRCLE(0.4)([8,8])
+#VIEW(circle)
+circle3d=(OFFSET([0.01,0.02,0.01])(circle))
+
+circle1=R([1,2])((0.03*PI))((COLOR(GREEN)(T([1,2,3])([0,1,0.6])(R([2,3])(PI/4)(CIRCLE(0.1)([20,20]))))))
+circle2=R([1,2])((0.03*PI))((COLOR(GREEN)(T([1,2,3])([0,1.5,0.8])(R([2,3])(PI/4)(CIRCLE(0.15)([20,20]))))))
+circle3=R([1,2])(PI/2)(circle2)
+circle4=R([1,2])(PI/2)(circle1)
+circle5=R([1,2])(-PI/2)(circle2)
+circle6=R([1,2])(-PI/2)(circle1)
+
+
+
+
+sterzo4=(STRUCT([circle3d,sterzo2,circle1,circle2,circle3,circle4,circle5,circle6]))
+#VIEW(sterzo4)
+
+
+mock_up3=STRUCT([mock_up2,T([1,2,3])([16,10.2,6])(R([1,3])(-PI/4)(sterzo4))])
 #VIEW(mock_up3)
 
 
@@ -233,7 +252,7 @@ tetto=(MAP(  surface ) (GRID([20,20])))
 
 
 prova1=COLOR(RED)(R([2,3])(PI/2)(OFFSET([0.1,0.2,0.1])(latosx)))
-prova2=COLOR(RED)(R([2,3])(PI/2)(OFFSET([0.1,0.2,0.1])(dietro)))
+prova2=COLOR(RED)(R([2,3])(PI/2)(OFFSET([0.1,0.2,0.1])(davanti)))
 prova3=COLOR(RED)(R([2,3])(PI/2)(OFFSET([0.1,0.2,0.1])(funcia)))
 prova4=(STRUCT([prova1,T([2])(8)(prova1),T([1,2])([18,0])(R([1,2])(PI/2)(prova2)),T([1])(6)(R([1,2])(PI/2)(prova3))]))
 #VIEW(prova4)
@@ -257,8 +276,63 @@ con_tetto=(STRUCT([prof3d, T([1,2,3])([36,3,15])(R([1,2])(PI/2)(S([1,2,3])([0.6,
 con_sportelli=(STRUCT([T([1,2,3])([22,21.3,3])(sportello3),T([1,2,3])([22,0.8,3])(sportello1),con_tetto,S([1,2,3])([3,3,3])(profilo3d_ZY1)]))
 #VIEW(con_sportelli)
 
-finale=(STRUCT([prof3d,S([1,2,3])([2,2,2])(profilo3d_ZY1),mock_up3]))
-VIEW(finale)
+
+
+
+
+
+finale1=(STRUCT([prof3d,S([1,2,3])([2,2,2])(profilo3d_ZY1),mock_up3]))
+#VIEW(finale)
+
+
+
+
+domain1=INTERVALS(1)(20)
+points6=[[3.5,1.2],[3.5,1.2],[3.5,1.2],[2,1.3],[1.5,1.9],[0.7,1.2],[0.7,1.2],[0,2.7],[0.3,3.6],[0.8,4],[0.8,4],[6.8,4], [6.8,4],[7.2,3.6],[7.5,2.7], [6.8,1.2],[6.8,1.2],[6.3,1.9],[5.2,1.3],[3.5,1.2],[3.5,1.2],[3.5,1.2]]
+dietro2=STRUCT([SPLINE(CUBICUBSPLINE(domain1))(points6)])
+dietro3=(OFFSET([0.1,0.2,0.1])(dietro2))
+prova6=(R([1,2])(PI/2)(R([2,3])(PI/2)(OFFSET([0.1,0.2,0.1])(dietro3))))
+prova7=(COLOR(RED)(T([1,2,3])([33,0,-0.4])(S([1,2,3])([2,2,2])(prova6))))
+
+
+
+alpha=BEZIER(S1)([[0.1,0,0],[2,0,0],[6,0,7],[0,0,5]])
+beta =BEZIER(S2)([[0,0,0],[3,5.5,0],[6,5.5,0]])
+domain=GRID([20,20])
+vvv=(STRUCT([MAP(PROFILEPRODSURFACE([alpha,beta]))(domain)]))
+
+
+Su0=BEZIER(S1)([[0,0,0],[10,0,0]])
+Su1=BEZIER(S1)([[0,10,0],[5,10,3],[10,5,0]])
+Sv0=BEZIER(S2)([[0.2,0,0],[-0.5,0,0],[0,-0.5,2],[0.2,1,0]])
+Sv1=BEZIER(S2)([[6,0,0],[9,0,0],[0,2.5,10],[6,10,0]])
+#bezier=T([1,2])([0,3])(R([2,4])(PI/2)(S([1,2,3])([0.3,0.3,0.3])(MAP(COONSPATCH([Su0,Su1,Sv0,Sv1]))(GRID([20,20])))))
+#bezier2=T([1,2,3])([15,2,3])(R([1,2])(3*PI/4)(S([1,2,3])([0.6,0.6,0.6])(vvv)))
+
+
+finale_3=(STRUCT([prof3d,S([1,2,3])([2,2,2])(profilo3d_ZY1),prova7]))
+
+#finale_3=(STRUCT([prof3d,S([1,2,3])([2,2,2])(profilo3d_ZY1),prova7,bezier]))
+
+VIEW(STRUCT([finale_3,mock_up3]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
