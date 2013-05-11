@@ -51,30 +51,20 @@ def GRID(args):
     V,cells = model
     verts = AA(list)(scipy.array(V) / AA(float)(args))
     return MKPOL([verts, AA(AA(lambda h:h+1))(cells), None])
-#---------------------------------------------------------
-
-
-
-
-
-
-
-
-
 
 #-------------------Codice preso da facebook di Marco Liceti
 def DOMAIN2D(domains1D):
-	def aux(q):
-		a = q[0]
-		b = q[1]
-		c = q[2]
-		d = q[3]
-		return [ [ a, b, d ], [ d, b, c ] ]
-	dd = PROD([ domains1D[0], domains1D[1] ])
-	complex = UKPOL(dd)
-	points = complex[0]
-	cells = CAT(AA(aux)(complex[1]))
-	return MKPOL([ points, cells, None ])
+    def aux(q):
+        a = q[0]
+        b = q[1]
+        c = q[2]
+        d = q[3]
+        return [ [ a, b, d ], [ d, b, c ] ]
+    dd = PROD([ domains1D[0], domains1D[1] ])
+    complex = UKPOL(dd)
+    points = complex[0]
+    cells = CAT(AA(aux)(complex[1]))
+    return MKPOL([ points, cells, None ])
 
 ld = INTERVALS(1)(32)
 rd = INTERVALS(2 * PI)(32)
@@ -82,10 +72,9 @@ rd = INTERVALS(2 * PI)(32)
 dd1 = DOMAIN2D([ ld, rd ])
 dd2 = PROD([ ld, rd ])
 
-#---------------------Esercise2------------------------------
 
 
-
+#------------------Esericise2---------------------------------------
 
 
 domain1=INTERVALS(1)(20)
@@ -116,7 +105,7 @@ mock_up1=(STRUCT([S([1,2,3])([3,3,3])(mock_up)]))
 #VIEW(mock_up1)
 
 
-#---------------------------------------------------
+#-------------------Esercise3--------------------------------
 domain=GRID([20,20])
 points1 = [ [ 4, 0, 5 ], [ 6, 0, 0.5 ], [ 7, 7, 7 ],[3,4,5]]
 c1 = BEZIER(S1)(points1)
@@ -149,14 +138,49 @@ raggi=(STRUCT([ROTATE([1,3])(PI/2)(b),ROTATE([1,3])((3)*PI/2)(b),ROTATE([1,3])((
 
 ruota1=(STRUCT([cerchione,T([3])(1)(S([1,2])([0.55,0.55])(R([2,3])(PI/2)(raggi))),COLOR(BLACK)(T([3])(-4)(S([1,2,3])([0.4,0.4,1])(surf1)))]))
 
-VIEW(ruota1)
+#VIEW(ruota1)
 mock_up1=COLOR(RED)((STRUCT([S([1,2,3])([2,2,2])(mock_up)])))
 #VIEW(mock_up1)
 
 wheels=(R([2,3])(PI/2)(ruota1))
 wheels1=R([1,2])(PI)(R([2,3])(PI/2)(ruota1))
 mock_up2=(STRUCT([mock_up1,T([1,3])([8,3])(wheels),T([1,3])([29.5,3])(wheels),T([1,2,3])([8,15.2,3])(wheels1),T([1,2,3])([29.5,15.2,3])(wheels1)]))
-VIEW(mock_up2)
+#VIEW(mock_up2)
+
+
+
+#-----------------Esercise4----------------------------------------
+
+
+
+
+sterzo=COLOR(BROWN)((TORUS([2.5,2])([30,20])))
+sterzo1=STRUCT([sterzo])
+#VIEW(sterzo1)
+
+
+profile_st=BEZIER(S1)([[0,0,0],[2,0,1]]) # defined in xz!
+domain=GRID([12,40])
+st_1=(MAP(ROTATIONALSURFACE(profile_st))(S(2)(PI/16)(domain)))
+st_2=R([1,2])(PI)(st_1)
+st_3=R([1,2])(PI/2)(st_1)
+
+st=COLOR(GRAY)(STRUCT([st_1,st_2,st_3]))
+#VIEW(st)
+
+
+sterzo2=(STRUCT([T([3])(1)(sterzo),st]))
+#VIEW(sterzo2)
+
+mock_up3=STRUCT([mock_up2,T([1,2,3])([16,10.2,6])(R([1,3])(-PI/4)(sterzo2))])
+VIEW(mock_up3)
+
+
+
+
+
+
+
 
 
 
