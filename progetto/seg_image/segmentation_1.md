@@ -1,6 +1,11 @@
+#Web-Dicom Segmentation 
+
+##Author : Farruggio-Pace
+
+
 # Two algortim for segmentation image
 
-#Web-Dicom Segmentation (Farruggio-Pace)
+
 - - -
 ## Region growing for edge detection
 
