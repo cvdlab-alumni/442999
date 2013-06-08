@@ -9,7 +9,7 @@ function v_to_obj (v) {
 	var i=0;
 	for (i=0; i<len ; i++){
 		add0 = v[i][2];
-		console.log(add0)
+		//console.log(add0)
 		
 	
 		if ( add0 !== undefined ){ v_to_obj +=  'v ' + '[' + v[i][0] + ' ' + v[i][1] + ' '+  v[i][2] + ']' + '\n' ;} 
