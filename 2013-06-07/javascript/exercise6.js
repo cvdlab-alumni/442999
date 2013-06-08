@@ -7,7 +7,7 @@ function v_to_obj (v) {
 	var v_to_obj= '';
 	len=v.length;
 	var i=0;
-	for (i=0; i<=len ; i++){
+	for (i=0; i<len ; i++){
 		add0 = v[i][2];
 		console.log(add0)
 		
@@ -28,16 +28,48 @@ function v_to_obj (v) {
 
 
 function fv_to_obj (fv) {
-	var tv_to_obj = '';
-	var lenvf= fv.length;
+	var fv_to_obj = '';
+	var lenfv= fv.length;
 	var i=0;
-	var k=0;
-	for (i=0; i<lenvf; i++){
-		if( vf[i][3] !== undefined ){
-			console.log(vf[i][3] );
-		vf_to_obj += 'vf ' + ' [ ' + ' vf[i][0] ' + ' ' + ' vf[i][1] '+ ' ' + ' vf[i][2] '+ ' ' + ' vf[i][3] ' + ' ' + ']' + '\n' ;}
-		else {vf_to_obj += ' vf ' +' [ ' + ' vf[i][0] ' + ' '+ ' vf[i][1] ' + ' ' + ' vf[i][2] ' + ' ' + ']' + '\n' ;}
+	//var k=0;
+	for (i=0; i<lenfv; i++){
+		if( fv[i][3] !== undefined ){
+			//console.log(fv[i][3] );
+		fv_to_obj += 'fv ' + ' [ ' +  fv[i][0]  + ' ' +  fv[i][1] + ' ' +  fv[i][2] + ' ' +  fv[i][3]  + ' ' + ']' + '\n' ;}
+		else {fv_to_obj += ' fv ' +' [ ' + fv[i][0]  + ' '+  fv[i][1]  + ' ' +  fv[i][2]  + ' ' + ']' + '\n' ;}
 
 	}
-	return vf_to_obj
+	return fv_to_obj
 }
+
+
+
+
+FV = [[5,6,7,8],
+	[0,5,8],
+	[0,4,5],
+	[1,2,4,5],
+	[2,3,5,6],
+	[0,8,7],
+	[3,6,7],
+	[1,2,3], 
+	[0,1,4]]
+
+V = [[0,6],
+	[0,0],
+	[3,0],
+	[6,0],
+	[0,3],
+	[3,3],
+	[6,3],
+	[6,6],
+	[3,6]]
+
+
+ fv_to_obj(FV);
+ v_to_obj(V);
+
+
+
+
+
