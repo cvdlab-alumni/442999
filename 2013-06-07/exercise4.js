@@ -259,9 +259,21 @@ var cells = [[0,1,2],[1,3,2],[2,3,4]];
 var simplicialComplex = SIMPLICIAL_COMPLEX(points)(cells);
 //DRAW(simplicialComplex);
 
-var casa = T([0])([n])(R([1,2])([PI/2])(EXTRUDE([2])(simplicialComplex)));
-var case1 = STRUCT(REPLICA(n_case)([casa,T([0])([numb]),casa,T([0])([numb])]));
-var case2 = STRUCT(REPLICA(n_case)([T([1])([2*aaa])(case1)]));
+var casa = T([0])([n])(R([1,2])([PI/2])(EXTRUDE([1])(simplicialComplex)));
+var case1 = COLOR([1,0,0])(STRUCT(REPLICA(n_case)([casa,T([0])([numb]),casa,T([0])([numb])])));
+var case2 = COLOR([0,1,0])(STRUCT(REPLICA(n_case)([T([1])([2*aaa])(case1)])));
+
+//----Rallenta troppo se carico più case
+
+//var case3 = STRUCT(REPLICA(n_case)([T([1])([2*numb])(case2)]));
+//var case4 = STRUCT(REPLICA(n_case)([T([1])([2*numb])(case3)]));
+//var case5 = STRUCT(REPLICA(n_case)([T([1])([2*numb])(case4)]));
+
+
+
+DRAW(STRUCT([case1,case2]))
+
+alert('se carico più file di case mi crasha, quindi sono commentate');
 
 //----Rallenta troppo se carico più case
 
