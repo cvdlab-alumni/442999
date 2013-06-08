@@ -1,4 +1,3 @@
-
 //---------Esercise1-----
 
 var n=20 ;
@@ -27,7 +26,7 @@ find_z=function (uv){
 	
 
 
-	var matrix=[-2,-1,0,1,2,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	var matrix=[-2,-1,0,1,2,0,0,3,0,0,-1,-1,-1,-1,0,0,0,0,0,0,0,0,0,0,0,0];
 	var len =  matrix.length;
 	var index = (Math.round((Math.random()*len)+1));
 	var al = matrix[index];
