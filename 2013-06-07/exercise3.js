@@ -1,4 +1,3 @@
-
 //---------Esercise1-----
 
 var n=20 ;
@@ -101,6 +100,8 @@ for(l=0; l<= len2 ; l++){
 
 
 
+
+
 //-------Exercise3-----
 
 
@@ -151,41 +152,6 @@ tree1 = (T([0,1,2])([x2,y2,h])(STRUCT([trunk, up1 ])));
 //DRAW(tree1)
 
 
-var l=0;
-var len2= array1.length;
-for(l=0; l<= len2 ; l++){
-	var xl=0;
-	var yl=0;
-	var zl=0;
-	
-	if (array1[l]===1){   xl=array2[l][0];
-					 	  yl=array2[l][1];
-					 	  zl=1;
-
-					    tree3=T([0,1,2])([xl,yl,zl])(tree)	;
-						DRAW(tree3);
-
-	 				
-} 
-}
-
-var l=0;
-var len2= array1.length ;
-for(l=0; l<= len2 ; l++){
-	var xl=0;
-	var yl=0;
-	var zl=0;
-	
-	if (array1[l]===2){   xl=array2[l][0];
-					 	  yl=array2[l][1];
-					 	  zl=2;
-
-					    tree3=T([0,1,2])([xl,yl,zl])(tree)	;
-						DRAW(tree3);
-
-	 				
-} 
-}
 
 
 var l=0;
@@ -195,67 +161,22 @@ for(l=0; l<= len2 ; l++){
 	var yl=0;
 	var zl=0;
 	
-	if (array1[l]===3){   xl=array2[l][0];
+	if (array1[l]===1 || array1[l]===2 || array1[l]===3 || array1[l]===6 || array1[l]===7 ){ 
+
+
+						  xl=array2[l][0];
 					 	  yl=array2[l][1];
-					 	  zl=3;
+					 	  zl=array1[l];
 
 					    tree3=T([0,1,2])([xl,yl,zl])(tree)	;
+						
 						DRAW(tree3);
+					
+					
 
 	 				
 } 
 }
-
-var l=0;
-var len2= array1.length ;
-for(l=0; l<= len2 ; l++){
-	var xl=0;
-	var yl=0;
-	var zl=0;
-	
-	if (array1[l]===6){   xl=array2[l][0];
-					 	  yl=array2[l][1];
-					 	  zl=6;
-
-					    tree3=T([0,1,2])([xl,yl,zl])(tree)	;
-						DRAW(tree3);
-
-	 				
-} 
-}
-
-var l=0;
-var len2= array1.length ;
-for(l=0; l<= len2 ; l++){
-	var xl=0;
-	var yl=0;
-	var zl=0;
-	
-	if (array1[l]===7){   xl=array2[l][0];
-					 	  yl=array2[l][1];
-					 	  zl=7;
-
-					    tree3=T([0,1,2])([xl,yl,zl])(tree)	;
-						DRAW(tree3);
-
-	 				
-} 
-}
-
-
-/*
-uv3 = DOMAIN([[0,1],[0,1]])([32,32]);
-Ca = BEZIER(S0)([[0,0,0],[0,3,0],[3,3,0],[3,0,0]]);
-Cb = BEZIER(S0)([[0,0,0],[0,-3,0],[3,-3,0],[3,0,0]]);
-//DRAW(MAP(Ca)(u));
-h1=2
-Sa = INTERP_P2C(S1)([[1.5,0,h1],Ca]);
-
-Sb = INTERP_P2C(S1)([[1.5,0,h1],Cb]);
-tree3=STRUCT([COLOR(green1)(MAP(Sa)(uv3)),COLOR(green1)(MAP(Sb)(uv3)),trunk]);
-*/
-
-//DRAW(tree)
 
 
 
