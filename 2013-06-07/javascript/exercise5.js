@@ -272,7 +272,7 @@ var case2 = COLOR([0,1,0])(STRUCT(REPLICA(n_case)([T([1])([2*aaa])(case1)])));
 
 
 
-DRAW(STRUCT([case1,case2]))
+DRAW(T([1])([1])(STRUCT([case1,case2])))
 
 alert('se carico più file di case mi crasha, quindi sono commentate');
 
@@ -299,10 +299,11 @@ var strade3t = (STRUCT(REPLICA(n_strade)([T([0])([2*numb])(strade2t)])));
 
 
 
-DRAW(STRUCT([strade1,strade2,strade3]))
+
+DRAW(T([1])([1])(STRUCT([strade1,strade2,strade3])))
 
 
-DRAW(STRUCT([strade1t,strade2t,strade3t]))
+DRAW(T([1])([1])(STRUCT([strade1t,strade2t,strade3t])))
 
 
 
