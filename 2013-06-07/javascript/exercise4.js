@@ -286,6 +286,7 @@ for(l=0; l<= len2 ; l++){
 //--------------------
 
 
+
 //----------Exercise4-----
 var n=20 ;
 var k=20
@@ -313,16 +314,8 @@ var case2 = COLOR([0,1,0])(STRUCT(REPLICA(n_case)([T([1])([2*aaa])(case1)])));
 
 
 
-DRAW(STRUCT([case1,case2]))
+DRAW(T([1])([1])(STRUCT([case1,case2])))
 
 alert('se carico più file di case mi crasha, quindi sono commentate');
 
-//----Rallenta troppo se carico più case
 
-//var case3 = STRUCT(REPLICA(n_case)([T([1])([2*numb])(case2)]));
-//var case4 = STRUCT(REPLICA(n_case)([T([1])([2*numb])(case3)]));
-//var case5 = STRUCT(REPLICA(n_case)([T([1])([2*numb])(case4)]));
-
-
-
-DRAW(T([1])([1])(STRUCT([case1,case2])))
