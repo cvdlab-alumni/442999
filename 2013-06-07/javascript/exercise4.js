@@ -46,7 +46,8 @@ find_z=function (uv){
 
 var DTM =COLOR([134/255,105/255,60/255])( MAP(find_z)(uv));
 
-DRAW(DTM);
+var DTM1 =COLOR([134/255,105/255,60/255])(CUBOID([40,20,0.1]));
+DRAW(STRUCT([DTM,DTM1]));
 
 //------Esercise2-----
 
