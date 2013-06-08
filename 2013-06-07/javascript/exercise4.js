@@ -325,4 +325,4 @@ alert('se carico più file di case mi crasha, quindi sono commentate');
 
 
 
-DRAW(STRUCT([case1,case2]))
+DRAW(T([1])([1])(STRUCT([case1,case2])))
