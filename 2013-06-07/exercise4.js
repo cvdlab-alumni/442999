@@ -1,4 +1,3 @@
-
 //---------Esercise1-----
 
 var n=20 ;
@@ -253,6 +252,7 @@ var skeleton1 = SKELETON(1)(uvcase);
 
 
 var numb=2
+var aaa=1
 var n_case=5
 var points = [[0,0],[1,0],[0,1],[1,1],[0.5,1.5]];
 var cells = [[0,1,2],[1,3,2],[2,3,4]];
@@ -261,7 +261,7 @@ var simplicialComplex = SIMPLICIAL_COMPLEX(points)(cells);
 
 var casa = T([0])([n])(R([1,2])([PI/2])(EXTRUDE([2])(simplicialComplex)));
 var case1 = STRUCT(REPLICA(n_case)([casa,T([0])([numb]),casa,T([0])([numb])]));
-var case2 = STRUCT(REPLICA(n_case)([T([1])([2*numb])(case1)]));
+var case2 = STRUCT(REPLICA(n_case)([T([1])([2*aaa])(case1)]));
 
 //----Rallenta troppo se carico più case
 
