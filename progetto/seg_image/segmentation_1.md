@@ -3,7 +3,30 @@
 ##Author : Farruggio-Pace
 
 
-# Two algortim for segmentation image
+# Four algortim for segmentation image
+
+
+
+- - -
+## Border Discovery
+
+![image_3](https://raw.github.com/cvdlab-cg/442999/master/progetto/seg_image/border_discorvery1.jpg)
+
+- - -
+
+
+
+
+
+
+
+- - -
+## Edge tracker
+
+![image_1](https://raw.github.com/cvdlab-cg/442999/master/progetto/seg_image/trackingedge1.jpg)
+- - -
+
+
 
 
 - - -
